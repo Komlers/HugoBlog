@@ -16,7 +16,7 @@ rssLimit = 10
 
 [params.author]
   name = "Evan"
-  about = "博客作者"
+  about = "about.md"
 
 [taxonomies]
   tag = "tags"
