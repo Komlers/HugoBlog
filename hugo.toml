@@ -1,4 +1,4 @@
-baseURL = "https://example.pages.dev/"
+baseURL = "https://blog.danevan.top/"
 theme = "hermit-v2"
 defaultContentLanguage = "zh"
 hasCJKLanguage = true
