@@ -71,10 +71,6 @@ rssLimit = 10
     name = "telegram"
     url = "https://t.me/ElofHew"
 
-  [[params.socialLinks]]
-    name = "weibo"
-    url = "https://weibo.com/u/5664519001"
-
 [menu]
   [[menu.main]]
     name = "文章"
