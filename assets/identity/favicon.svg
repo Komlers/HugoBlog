@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#494f5c"/>
-  <text x="32" y="44" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#018472">H</text>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1786280649816" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12507" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M76.8 73.1392C76.8 32.7424 109.7472 0 150.4 0h294.4C729.344 0 960 229.2352 960 512S729.344 1024 444.8 1024h-294.4C109.7472 1024 76.8 991.2576 76.8 950.8608V73.1392z m147.2 73.152V877.696h220.8C648.0384 877.7088 812.8 713.984 812.8 512c0-201.984-164.7616-365.7088-368-365.7088H224z" fill="#1AB370" p-id="12508"></path></svg>
