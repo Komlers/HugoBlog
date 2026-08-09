@@ -12,6 +12,12 @@ copyright = "Dan_Evan"
 pygmentsCodefences = true
 pygmentsUseClasses = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      linkTargetBlank = true
+
 rssLimit = 10
 
 [params.author]
