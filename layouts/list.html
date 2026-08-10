@@ -22,7 +22,6 @@
   {{- $listLayout   := .Site.Params.listLayout -}}
   {{- $dateFormat   := .Site.Params.dateform.ShortDate | default "Jan 2" -}}
   {{- $usesAnim     := ne false .Site.Params.usesAnimation -}}
-  {{- $tz          := time.LoadLocation .Site.Params.timezone | default (time.LoadLocation "UTC") -}}
 
   <main class="site-main section-inner thin{{- if $usesAnim }} animated fadeIn faster{{- end -}}">
 
@@ -54,7 +53,7 @@
     {{- end -}}
 
     {{- /* ── Build effective-date-sorted, year-grouped page list ────────────
-          Timezone-aware: convert dates to configured timezone before grouping.
+          Timezone-aware: use .Local to respect configured timezone.
     ──────────────────────────────────────────────────────────────────────── */ -}}
 
     {{- /* Step 1: Annotate each page with its effective date (converted to site timezone) */ -}}
@@ -64,7 +63,7 @@
       {{- if gt .Lastmod .Date -}}
         {{- $effDate = .Lastmod -}}
       {{- end -}}
-      {{- $annotated = $annotated | append (dict "page" . "effectiveDate" ($effDate.In $tz)) -}}
+      {{- $annotated = $annotated | append (dict "page" . "effectiveDate" ($effDate.Local)) -}}
     {{- end -}}
 
     {{- /* Step 2: Sort all annotated pages by effective date, descending */ -}}
