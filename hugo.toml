@@ -5,7 +5,6 @@ hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
 timezone = "Asia/Shanghai"
-enableGitInfo = true
 
 title = "Dan_EvanのBlog"
 copyright = "Dan_Evan"

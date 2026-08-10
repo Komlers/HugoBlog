@@ -1,3 +1,16 @@
+{{/*
+  维护说明（覆盖主题 themes/hermit-v2/layouts/list.html）
+  ─────────────────────────────────────────────────────
+  对应主题版本: v1.1.35-3 (2a677e9a70caf7d423ae6e992196a72c3552a18e)
+  覆盖原因:
+    1. 修复置顶功能: 主题使用 .Params.pin，但 front matter 实际字段为
+       pinned，导致置顶不生效。已改为 .Params.pinned。
+    2. 修复日期分组: Cloudflare Pages 构建时 GitInfo 不完整，主题
+       Lastmod>Date 优先逻辑会把所有文章日期覆盖为同一天。已改为
+       始终使用 front matter 的 .Date 并按 .Local 时区显示。
+
+  更新主题时请 diff 本文件与主题新版，合并上游改动，勿整体覆盖。
+*/ -}}
 {{ define "header" }}
 {{ partialCached "header.html" . }}
 {{ end }}
