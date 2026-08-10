@@ -4,12 +4,16 @@ defaultContentLanguage = "zh"
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
+enableGitInfo = true
 
 title = "Dan_EvanのBlog"
 copyright = "Dan_Evan"
 
 pygmentsCodefences = true
 pygmentsUseClasses = true
+
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]
 
 [markup]
   [markup.goldmark]
