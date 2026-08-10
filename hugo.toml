@@ -4,7 +4,6 @@ defaultContentLanguage = "zh"
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
-enableGitInfo = true
 
 title = "Dan_EvanのBlog"
 copyright = "Dan_Evan"
