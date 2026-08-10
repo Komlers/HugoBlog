@@ -101,3 +101,13 @@ html[data-font="misans"] textarea {
 .font-switch-btn[aria-pressed="true"] {
   color: var(--accentColor, #018472);
 }
+
+// Footer visit counter
+.footer-visits {
+  font-size: 0.85em;
+  opacity: 0.8;
+
+  span {
+    white-space: nowrap;
+  }
+}

@@ -6,3 +6,4 @@
 <script defer src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}" crossorigin="anonymous"></script>
 {{- $fontSwitchJS := resources.Get "js/font-switch.js" | minify | fingerprint -}}
 <script defer src="{{ $fontSwitchJS.RelPermalink }}" integrity="{{ $fontSwitchJS.Data.Integrity }}" crossorigin="anonymous"></script>
+<script defer src="https://events.vercount.one/js"></script>
