@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyEl = document.getElementById('search-empty');
 
     let index = null;
-    const baseURL = document.querySelector('meta[property="og:url"]')?.content || window.location.origin;
 
-    // Load the JSON index once
-    const indexURL = baseURL + '/index.json';
+    // Load the JSON index once from the site root.
+    const indexURL = '/index.json';
     fetch(indexURL)
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
         .then(data => {
             index = data;
             loadingEl.style.display = 'none';
@@ -21,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
             input.placeholder = '输入关键词搜索…';
         })
         .catch(() => {
-            loadingEl.textContent = '索引加载失败';
+            loadingEl.textContent = '索引加载失败，请刷新页面重试';
         });
 
-    function doSearch(query) {
-        const q = query.trim().toLowerCase();
+    function doSearch() {
+        const q = input.value.trim().toLowerCase();
         resultsEl.innerHTML = '';
         if (!q || !index) {
             emptyEl.style.display = 'none';
@@ -59,5 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    input.addEventListener('input', () => doSearch(input.value));
+    // Live search on input, and also on button click / Enter key.
+    input.addEventListener('input', doSearch);
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') doSearch();
+    });
+
+    const btn = document.getElementById('search-btn');
+    if (btn) btn.addEventListener('click', doSearch);
 });
