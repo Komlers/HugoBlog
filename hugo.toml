@@ -15,6 +15,19 @@ pygmentsUseClasses = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.extensions]
+      strikethrough = false
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.insert]
+          enable = true
+        [markup.goldmark.extensions.extras.delete]
+          enable = true
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
+        [markup.goldmark.extensions.extras.subscript]
+          enable = true
+        [markup.goldmark.extensions.extras.superscript]
+          enable = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -30,17 +43,21 @@ rssLimit = 10
   category = "categories"
 
 [params]
-description = "这里是Dan_Evanの个人博客，基于Hugo框架搭建，CF Pages部署"
-themeColor = "#494f5c"
-accentColor = "#018472"
-homeSubtitle = "记录我的笔记和日常发癫，。"
-footerCopyright = "Dan_Evan"
-justifyContent = false
-code_copy_button = true
-homeSubtitlePrinter = true
-scrollToTop = true
-global_mathjax = true
-shareSocial = true
+  description = "这里是Dan_Evanの个人博客，基于Hugo框架搭建，CF Pages部署"
+  themeColor = "#494f5c"
+  accentColor = "#018472"
+  homeSubtitle = "记录我的笔记和日常发癫，。"
+  footerCopyright = "Dan_Evan"
+  justifyContent = false
+  code_copy_button = true
+  homeSubtitlePrinter = true
+  scrollToTop = true
+  global_mathjax = true
+  shareSocial = true
+  pinned = "置顶"
+  pinnedSVGname = "pin"
+  listLayout = ["tags","categories"]
+  footerHideThemeName = false
 
 [params.utterances]
   repo = "Komlers/HugoBlog"
