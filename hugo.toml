@@ -28,10 +28,15 @@ rssLimit = 10
   tag = "tags"
   category = "categories"
 
-[params]
-  description = "这里是Dan_Evan的个人博客，基于Hugo框架搭建，CF Pages部署"
+  [params]
+  description = "这里是Dan_Evanの个人博客，基于Hugo框架搭建，CF Pages部署"
   themeColor = "#494f5c"
   accentColor = "#018472"
+
+  [params.utterances]
+    repo = "Komlers/HugoBlog"
+    issueTerm = "pathname"
+    theme = "github-light"
 
   homeSubtitle = "记录我的笔记和日常发癫，。"
   footerCopyright = "Dan_Evan"
