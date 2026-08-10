@@ -32,6 +32,8 @@ rssLimit = 10
   description = "这里是Dan_Evanの个人博客，基于Hugo框架搭建，CF Pages部署"
   themeColor = "#494f5c"
   accentColor = "#018472"
+  custom_css = ["scss/simple-lightbox.scss"]
+  custom_js = ["js/simple-lightbox.js"]
 
   [params.utterances]
     repo = "Komlers/HugoBlog"
@@ -58,10 +60,6 @@ rssLimit = 10
     enable = true
     width = '300'
     layout = "grid"
-
-  [params]
-    custom_css = ["scss/simple-lightbox.scss"]
-    custom_js = ["js/simple-lightbox.js"]
 
   [params.dateform]
     CopyrightDate = "2006"
