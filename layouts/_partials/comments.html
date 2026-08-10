@@ -4,10 +4,26 @@
 <div id="comment-btn-wrap">
   <button id="comment-btn" type="button" onclick="loadUtterances()">
     {{- with .Site.Params.utterances.buttonText }}{{ . }}{{ else }}加载评论{{ end -}}
+    <span id="comment-count" class="comment-count"></span>
   </button>
 </div>
 <div id="utterances-container"></div>
 <script>
+  // Fetch comment count from GitHub issues API (issue title == page pathname)
+  {{ $path := .RelPermalink }}
+  (function () {
+    var cc = document.getElementById('comment-count');
+    if (!cc) return;
+    fetch('https://api.github.com/search/issues?q=' + encodeURIComponent('repo:{{ .Site.Params.utterances.repo }} "{{ $path }}"'))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (data && data.total_count > 0 && data.items && data.items.length > 0) {
+          var n = data.items[0].comments;
+          cc.textContent = ' (' + n + '条)';
+        }
+      })
+      .catch(function () {});
+  })();
   function loadUtterances() {
     var wrap = document.getElementById('comment-btn-wrap');
     if (wrap) wrap.style.display = 'none';

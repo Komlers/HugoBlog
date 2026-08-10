@@ -16,6 +16,9 @@ pygmentsUseClasses = true
     [markup.goldmark.renderer]
       unsafe = true
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 rssLimit = 10
 
 [params.author]
@@ -90,6 +93,11 @@ rssLimit = 10
     name = "关于"
     url = "about/"
     weight = 20
+
+  [[menu.main]]
+    name = "搜索"
+    url = "/search/"
+    weight = 25
 
   [[menu.main]]
     name = "主站"

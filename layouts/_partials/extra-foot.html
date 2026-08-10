@@ -1,2 +1,6 @@
 {{- $lightboxJS := resources.Get "js/simple-lightbox.js" | minify | fingerprint -}}
 <script defer src="{{ $lightboxJS.RelPermalink }}" integrity="{{ $lightboxJS.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- $progressJS := resources.Get "js/reading-progress.js" | minify | fingerprint -}}
+<script defer src="{{ $progressJS.RelPermalink }}" integrity="{{ $progressJS.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- $searchJS := resources.Get "js/search.js" | minify | fingerprint -}}
+<script defer src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}" crossorigin="anonymous"></script>

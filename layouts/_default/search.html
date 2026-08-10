@@ -1,0 +1,21 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<main class="site-main section-inner thin animated fadeIn faster">
+  <h1>{{ .Title }}</h1>
+  <div id="search-wrap">
+    <input type="search" id="search-input" placeholder="输入关键词搜索…" autocomplete="off" aria-label="搜索">
+    <div id="search-results"></div>
+    <div id="search-loading" style="display:none;">加载索引中…</div>
+    <p id="search-empty" style="display:none;">未找到匹配结果。</p>
+  </div>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+  {{ partial "footer.html" . }}
+</footer>
+{{ end }}

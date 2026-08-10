@@ -1,0 +1,15 @@
+{{- $.Scratch.Set "i" 0 -}}
+[
+{{- range $index, $page := .Site.RegularPages -}}
+  {{- if (and (not $page.Draft) (not $page.Params.search_hidden)) -}}
+    {{- if gt ($.Scratch.Get "i") 0 }},{{ end -}}
+    {{- $.Scratch.Set "i" (add ($.Scratch.Get "i") 1) -}}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "url": {{ $page.Permalink | jsonify }},
+      "content": {{ (printf "%s %s" $page.Plain $page.Summary) | jsonify }},
+      "date": {{ $page.Date.Format "2006-01-02" | jsonify }}
+    }
+  {{- end -}}
+{{- end -}}
+]
