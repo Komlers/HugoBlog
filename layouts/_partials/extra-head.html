@@ -1,2 +1,4 @@
 {{- $lightboxCSS := resources.Get "scss/simple-lightbox.scss" | toCSS | minify | fingerprint -}}
 <link rel="stylesheet" media="screen" href="{{ $lightboxCSS.RelPermalink }}" integrity="{{ $lightboxCSS.Data.Integrity }}" crossorigin="anonymous">
+{{- $commentsCSS := resources.Get "scss/comments.scss" | toCSS | minify | fingerprint -}}
+<link rel="stylesheet" media="screen" href="{{ $commentsCSS.RelPermalink }}" integrity="{{ $commentsCSS.Data.Integrity }}" crossorigin="anonymous">
