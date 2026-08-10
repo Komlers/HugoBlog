@@ -1,0 +1,2 @@
+{{- $lightboxJS := resources.Get "js/simple-lightbox.js" | minify | fingerprint -}}
+<script defer src="{{ $lightboxJS.RelPermalink }}" integrity="{{ $lightboxJS.Data.Integrity }}" crossorigin="anonymous"></script>

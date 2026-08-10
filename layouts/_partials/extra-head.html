@@ -1,0 +1,2 @@
+{{- $lightboxCSS := resources.Get "scss/simple-lightbox.scss" | toCSS | minify | fingerprint -}}
+<link rel="stylesheet" media="screen" href="{{ $lightboxCSS.RelPermalink }}" integrity="{{ $lightboxCSS.Data.Integrity }}" crossorigin="anonymous">
