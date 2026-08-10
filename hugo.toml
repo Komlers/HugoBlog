@@ -29,59 +29,58 @@ rssLimit = 10
   tag = "tags"
   category = "categories"
 
-  [params]
-  description = "这里是Dan_Evanの个人博客，基于Hugo框架搭建，CF Pages部署"
-  themeColor = "#494f5c"
-  accentColor = "#018472"
+[params]
+description = "这里是Dan_Evanの个人博客，基于Hugo框架搭建，CF Pages部署"
+themeColor = "#494f5c"
+accentColor = "#018472"
+homeSubtitle = "记录我的笔记和日常发癫，。"
+footerCopyright = "Dan_Evan"
+justifyContent = false
+code_copy_button = true
+homeSubtitlePrinter = true
+scrollToTop = true
+global_mathjax = true
+shareSocial = true
 
-  [params.utterances]
-    repo = "Komlers/HugoBlog"
-    issueTerm = "pathname"
-    theme = "github-light"
+[params.utterances]
+  repo = "Komlers/HugoBlog"
+  issueTerm = "pathname"
+  theme = "github-light"
 
-  homeSubtitle = "记录我的笔记和日常发癫，。"
-  footerCopyright = "Dan_Evan"
-  justifyContent = false
-  code_copy_button = true
-  homeSubtitlePrinter = true
-  scrollToTop = true
-  global_mathjax = true
-  shareSocial = true
+[params.pages]
+  LastmodOpen = '['
+  LastmodClose = ']'
+  readTimeSeparator = "… ⏱ 阅读时长:"
+  lastUpdatedOn = "最后更新于: "
+  relatedPosts = true
 
-  [params.pages]
-    LastmodOpen = '['
-    LastmodClose = ']'
-    readTimeSeparator = "… ⏱ 阅读时长:"
-    lastUpdatedOn = "最后更新于: "
-    relatedPosts = true
+[params.gallery]
+  enable = true
+  width = '300'
+  layout = "grid"
 
-  [params.gallery]
-    enable = true
-    width = '300'
-    layout = "grid"
+[params.dateform]
+  CopyrightDate = "2006"
+  LongDate = "2006年1月2日"
+  ShortDate = "1月2日"
+  NumDateShort = "2006-01-02"
+  NumDateLong = "2006-01-02 15:04 -0700"
 
-  [params.dateform]
-    CopyrightDate = "2006"
-    LongDate = "2006年1月2日"
-    ShortDate = "1月2日"
-    NumDateShort = "2006-01-02"
-    NumDateLong = "2006-01-02 15:04 -0700"
+[[params.socialLinks]]
+  name = "github"
+  url = "https://github.com/ElofHew"
 
-  [[params.socialLinks]]
-    name = "github"
-    url = "https://github.com/ElofHew"
+[[params.socialLinks]]
+  name = "email"
+  url = "mailto:2352235176@qq.com"
 
-  [[params.socialLinks]]
-    name = "email"
-    url = "mailto:2352235176@qq.com"
+[[params.socialLinks]]
+  name = "bilibili"
+  url = "https://space.bilibili.com/642688364"
 
-  [[params.socialLinks]]
-    name = "bilibili"
-    url = "https://space.bilibili.com/642688364"
-
-  [[params.socialLinks]]
-    name = "telegram"
-    url = "https://t.me/ElofHew"
+[[params.socialLinks]]
+  name = "telegram"
+  url = "https://t.me/ElofHew"
 
 [menu]
   [[menu.main]]
