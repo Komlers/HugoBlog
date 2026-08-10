@@ -16,7 +16,6 @@ pygmentsUseClasses = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-      linkTargetBlank = true
 
 rssLimit = 10
 
