@@ -39,6 +39,7 @@ tags:
   - 标签1
 categories:
   - 分类1
+author: xxx
 ---
 ```
 
@@ -53,6 +54,7 @@ categories:
 | `images` | 特色图片 | `images/cover.jpg`（图片放 `static/` 目录） |
 | `tags` | 标签（多选） | `- Hugo` / `- 教程` |
 | `categories` | 分类（多选） | `- 技术` / `- 生活` |
+| `author` | 作者 | `"Dan_Evan"` |
 
 ### 注意事项
 
@@ -219,6 +221,7 @@ git push
 ### 文件命名
 
 - 使用英文或拼音：`hugo-install-guide.md`
+- 尽量避免中文标题：`中文标题.md`
 - 避免空格和特殊字符
 
 ### 图片路径

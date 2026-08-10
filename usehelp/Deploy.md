@@ -408,7 +408,7 @@ Blog/
 
 ## 九、写文章流程
 
-日常写文章请参考 [Tips.md](./Tips.md)：
+日常写文章请参考 [Post.md](./Post.md)：
 
 1. `hugo new posts/标题.md`
 2. 编辑内容和 front matter
