@@ -87,3 +87,17 @@
     color: var(--text-secondary, #888);
   }
 }
+
+// Font switch
+html[data-font="misans"] body,
+html[data-font="misans"] button,
+html[data-font="misans"] input,
+html[data-font="misans"] select,
+html[data-font="misans"] textarea {
+  font-family: "MiSans", system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+}
+
+.font-switch-btn[aria-pressed="true"] {
+  color: var(--accentColor, #018472);
+}

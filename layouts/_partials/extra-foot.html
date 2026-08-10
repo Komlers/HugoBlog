@@ -4,3 +4,5 @@
 <script defer src="{{ $progressJS.RelPermalink }}" integrity="{{ $progressJS.Data.Integrity }}" crossorigin="anonymous"></script>
 {{- $searchJS := resources.Get "js/search.js" | minify | fingerprint -}}
 <script defer src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- $fontSwitchJS := resources.Get "js/font-switch.js" | minify | fingerprint -}}
+<script defer src="{{ $fontSwitchJS.RelPermalink }}" integrity="{{ $fontSwitchJS.Data.Integrity }}" crossorigin="anonymous"></script>
