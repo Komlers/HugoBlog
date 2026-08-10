@@ -4,6 +4,7 @@ defaultContentLanguage = "zh"
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
+timezone = "Asia/Shanghai"
 enableGitInfo = true
 
 title = "Dan_EvanのBlog"
@@ -35,8 +36,6 @@ pygmentsUseClasses = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-
-rssLimit = 10
 
 [params.author]
   name = "Dan_Evan"
