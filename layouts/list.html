@@ -53,16 +53,15 @@
     {{- end -}}
 
     {{- /* ── Build effective-date-sorted, year-grouped page list ────────────
-          Timezone-aware: use .Local to respect configured timezone.
+          Use .Date from front matter (not .Lastmod from GitInfo) to avoid
+          Cloudflare Pages build-time overwriting all dates to same value.
     ──────────────────────────────────────────────────────────────────────── */ -}}
 
-    {{- /* Step 1: Annotate each page with its effective date (converted to site timezone) */ -}}
+    {{- /* Step 1: Annotate each page with its date from front matter */ -}}
     {{- $annotated := slice -}}
     {{- range .Data.Pages -}}
+      {{- /* Always use .Date from front matter, ignore .Lastmod from GitInfo */ -}}
       {{- $effDate := .Date -}}
-      {{- if gt .Lastmod .Date -}}
-        {{- $effDate = .Lastmod -}}
-      {{- end -}}
       {{- $annotated = $annotated | append (dict "page" . "effectiveDate" ($effDate.Local)) -}}
     {{- end -}}
 
