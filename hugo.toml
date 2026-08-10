@@ -59,6 +59,10 @@ rssLimit = 10
     width = '300'
     layout = "grid"
 
+  [params]
+    custom_css = ["scss/simple-lightbox.scss"]
+    custom_js = ["js/simple-lightbox.js"]
+
   [params.dateform]
     CopyrightDate = "2006"
     LongDate = "2006年1月2日"
