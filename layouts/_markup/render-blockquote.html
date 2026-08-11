@@ -1,0 +1,32 @@
+{{- /*
+GitHub-style Markdown Alerts render hook.
+Hugo natively parses "> [!NOTE]" etc. and provides:
+  .Type        -> "alert" (or "regular")
+  .AlertType   -> lowercase alert type, e.g. "note", "tip", "warning"
+  .AlertTitle  -> optional custom title
+  .Text        -> blockquote content (marker line already removed)
+*/ -}}
+
+{{- if eq .Type "alert" -}}
+	{{- $type := .AlertType -}}
+	{{- $class := $type | default "note" -}}
+	{{- $title := "" -}}
+	{{- if .AlertTitle -}}
+		{{- $title = .AlertTitle -}}
+	{{- else -}}
+		{{- $titleKey := printf "ghAlert%s" $type -}}
+		{{- $title = i18n $titleKey | default (title $type) -}}
+	{{- end -}}
+	{{- $svgName := "" -}}
+	{{- if eq $type "note" }}{{ $svgName = "admonition_info" }}{{- end -}}
+	{{- if eq $type "tip" }}{{ $svgName = "admonition_tip" }}{{- end -}}
+	{{- if eq $type "important" }}{{ $svgName = "admonition_info" }}{{- end -}}
+	{{- if eq $type "warning" }}{{ $svgName = "admonition_warning" }}{{- end -}}
+	{{- if eq $type "caution" }}{{ $svgName = "admonition_danger" }}{{- end -}}
+	<aside class="admonition {{ $class }} gh-alert gh-alert-{{ $type }}">
+		<div class="admonition-title"><span class="icon">{{- partial "svg.html" (dict "context" . "name" $svgName) -}}</span><b>{{ $title }}</b></div>
+		<div class="admonition-content">{{ .Text | safeHTML }}</div>
+	</aside>
+{{- else -}}
+	<blockquote>{{ .Text | safeHTML }}</blockquote>
+{{- end -}}

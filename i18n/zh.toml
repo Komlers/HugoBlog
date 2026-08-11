@@ -45,3 +45,20 @@ other = "特色图片"
 
 [Summary]
 other = "摘要"
+
+# GitHub Markdown Alerts
+# 对应 render-blockquote.html 中的 [!NOTE] 等语法
+[ghAlertnote]
+other = "备注"
+
+[ghAlerttip]
+other = "提示"
+
+[ghAlertimportant]
+other = "重要"
+
+[ghAlertwarning]
+other = "警告"
+
+[ghAlertcaution]
+other = "注意"

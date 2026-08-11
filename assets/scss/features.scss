@@ -111,3 +111,35 @@ html[data-font="misans"] textarea {
     white-space: nowrap;
   }
 }
+
+// GitHub Markdown Alerts (IMPORTANT / CAUTION)
+// NOTE/TIP/WARNING 复用主题自带 admonition 颜色，这里补充额外的类型
+.admonition.important {
+  border-left-color: #8250df;
+  background-color: rgba(130, 80, 223, 0.1);
+
+  .admonition-title {
+    color: #8250df;
+    border-bottom-color: rgba(130, 80, 223, 0.1);
+    background-color: rgba(130, 80, 223, 0.1);
+
+    .icon {
+      color: #8250df;
+    }
+  }
+}
+
+.admonition.caution {
+  border-left-color: #cf222e;
+  background-color: rgba(207, 34, 46, 0.1);
+
+  .admonition-title {
+    color: #cf222e;
+    border-bottom-color: rgba(207, 34, 46, 0.1);
+    background-color: rgba(207, 34, 46, 0.1);
+
+    .icon {
+      color: #cf222e;
+    }
+  }
+}
