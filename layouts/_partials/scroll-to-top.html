@@ -1,4 +1,4 @@
-{{ if and .Site.Params.scrollToTop (eq .Kind "page") }}
+{{ if and .Site.Params.scrollToTop (eq .Kind "page") (eq .Section "posts") }}
 <a href="#" class="scroll-up">{{ partial "svg.html" (dict "context" . "name" "scrollup") }}</a>
 <noscript>
     <a href="#" class="scroll-up show">{{ partial "svg.html" (dict "context" . "name" "scrollup") }}</a>
