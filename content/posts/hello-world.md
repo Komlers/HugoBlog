@@ -21,3 +21,7 @@ tags:
 - 分享有趣的发现
 
 开始吧！
+
+{{< iframe type="video" src="https://player.bilibili.com/player.html?isOutside=true&aid=117082972751642&bvid=BV1Thgj6pEJ6&cid=40849510028&p=1" >}}
+
+{{< iframe type="music" src="https://music.163.com/outchain/player?type=2&id=2117545694&auto=1&height=66" >}}

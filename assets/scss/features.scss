@@ -114,8 +114,7 @@ html[data-font="misans"] textarea {
 
 // GitHub Markdown Alerts (IMPORTANT / CAUTION)
 // NOTE/TIP/WARNING 复用主题自带 admonition 颜色，这里补充额外的类型
-.admonition.important {
-  border-left-color: #8250df;
+.admonition.important {  border-left-color: #8250df;
   background-color: rgba(130, 80, 223, 0.1);
 
   .admonition-title {
@@ -143,3 +142,35 @@ html[data-font="misans"] textarea {
     }
   }
 }
+
+// Embedded iframe container
+.iframe-container {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+  --iframe-bg: transparent;
+
+  iframe {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
+    border-radius: 6px;
+    background: var(--iframe-bg, transparent);
+  }
+}
+
+// Video embeds (Bilibili, YouTube, etc.) keep a dark backdrop
+.iframe-type-video iframe {
+  background: #000;
+}
+
+// Small music players and generic widgets let their content define the height
+.iframe-type-music iframe,
+.iframe-type-widget iframe {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  height: auto;
+}
+

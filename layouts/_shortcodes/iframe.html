@@ -1,0 +1,66 @@
+{{- /*
+Iframe shortcode for embedding external pages/videos in posts.
+
+Usage:
+  {{< iframe src="https://..." >}}                          # widget (default)
+  {{< iframe type="music" src="https://music.163.com/..." >}}
+  {{< iframe type="video" src="https://..." >}}
+
+Parameters (all optional except src):
+  src     - iframe URL (positional first arg or named)
+  type    - preset type: "widget" (default), "music", "video"
+  height  - override height in px
+  width   - override width (default "100%")
+  title   - accessible title for the iframe
+  allow   - permissions for the iframe
+  sandbox - space-separated sandbox flags (optional)
+  class   - extra CSS class(es) added to a wrapping div
+*/ -}}
+
+{{- $src := "" -}}
+{{- if .IsNamedParams -}}
+    {{- $src = .Get "src" | default "" -}}
+{{- else -}}
+    {{- $src = .Get 0 | default "" -}}
+{{- end -}}
+
+{{- if eq $src "" -}}
+    {{- errorf "Iframe shortcode: missing required 'src' parameter. See %s" .Position -}}
+{{- end -}}
+
+{{- $type := .Get "type" | default "widget" -}}
+{{- $title := .Get "title" | default "Embedded content" -}}
+{{- $width := .Get "width" | default "100%" -}}
+
+{{- /* Per-type presets (extend this map for future iframe types) */ -}}
+{{- $presets := dict
+      "video"  (dict "height" 450 "bg" "#000"    "align" "center" "autoHeight" false)
+      "music"  (dict "height" 66  "bg" "transparent" "align" "center" "autoHeight" true)
+      "widget" (dict "height" 350 "bg" "transparent" "align" "center" "autoHeight" true)
+-}}
+
+{{- $preset := index $presets $type | default (index $presets "widget") -}}
+{{- $bg := index $preset "bg" -}}
+{{- $align := index $preset "align" -}}
+{{- $autoHeight := index $preset "autoHeight" -}}
+{{- $allow := .Get "allow" | default "fullscreen; autoplay; encrypted-media; picture-in-picture" -}}
+{{- $class := .Get "class" | default "" -}}
+
+<div class="iframe-container iframe-type-{{ $type }}{{ with $class }} {{ . }}{{ end }}" style="{{ with $bg }}--iframe-bg: {{ $bg }}; {{ end }}text-align: {{ $align }};">
+    <iframe
+        src="{{ $src | safeURL }}"
+        width="{{ $width }}"
+        {{- if .Get "height" }}
+        height="{{ .Get "height" }}"
+        {{- else if not $autoHeight }}
+        height="{{ index $preset "height" }}"
+        {{- end }}
+        title="{{ $title }}"
+        loading="lazy"
+        allow="{{ $allow }}"
+        allowfullscreen
+        frameborder="0"
+        scrolling="no"
+        {{- with .Get "sandbox" }} sandbox="{{ . }}"{{ end -}}
+    ></iframe>
+</div>
