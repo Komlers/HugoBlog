@@ -1,6 +1,7 @@
 # 博客从零部署指南
 
-从零开始在 Windows、Linux（Fedora/Debian/Ubuntu）、Android（Termux）三大平台搭建并部署 Hugo 博客。
+> 从零开始在 Windows、Linux（Fedora/Debian/Ubuntu）、Android（Termux）三大平台搭建并部署 Hugo 博客。
+> 本指南的配置文件为「最小可用」模板；本博客实际启用了搜索、评论、GitHub Alert、iframe 等扩展功能，完整配置请直接参考仓库根目录的 `hugo.toml` 与本仓库 `layouts/`、`assets/` 下的自定义文件。
 
 ---
 
@@ -101,8 +102,8 @@ hugo version
 
 ```bash
 # 进入工作目录
-cd D:\Blog          # Windows
-cd ~/HugoBlog       # Linux/Termux
+cd D:\Projects\WebsiteRepo\HugoBlog   # Windows
+cd ~/HugoBlog                          # Linux/Termux
 
 # 初始化站点
 hugo new site . --format toml --force
@@ -127,7 +128,7 @@ defaultContentLanguage = "zh"
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
-enableGitInfo = true
+timezone = "Asia/Shanghai"
 
 title = "博客标题"
 copyright = "你的名字"
@@ -135,7 +136,30 @@ copyright = "你的名字"
 pygmentsCodefences = true
 pygmentsUseClasses = true
 
-rssLimit = 10
+# 若需要站内搜索，home 需输出 JSON 作为搜索索引
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      strikethrough = false
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.insert]
+          enable = true
+        [markup.goldmark.extensions.extras.delete]
+          enable = true
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
+        [markup.goldmark.extensions.extras.subscript]
+          enable = true
+        [markup.goldmark.extensions.extras.superscript]
+          enable = true
 
 [params.author]
   name = "你的名字"
@@ -154,8 +178,14 @@ rssLimit = 10
   code_copy_button = true
   homeSubtitlePrinter = true
   scrollToTop = true
-  global_mathjax = false
+  global_mathjax = true
   shareSocial = true
+
+  # 评论系统（可选，配置后启用 utterances）
+  [params.utterances]
+    repo = "你的用户名/仓库名"
+    issueTerm = "pathname"
+    theme = "github-light"
 
   [params.pages]
     LastmodOpen = '['
@@ -183,7 +213,14 @@ rssLimit = 10
     name = "关于"
     url = "about/"
     weight = 20
+
+  [[menu.main]]
+    name = "搜索"
+    url = "search/"
+    weight = 25
 ```
+
+> 说明：本博客额外启用了 MiSans 字体切换、Vercount 访问统计、GitHub Alert、iframe 短代码等，均通过 `layouts/`、`assets/` 下的自定义文件实现，不属于 `hugo.toml` 配置，部署时以仓库实际文件为准。
 
 ### 3.4 添加中文 i18n
 
@@ -225,6 +262,22 @@ other = "特色图片"
 
 [Summary]
 other = "摘要"
+
+# GitHub Markdown Alerts（可选，启用 GitHub Alert 渲染钩子时需要）
+[ghAlertnote]
+other = "备注"
+
+[ghAlerttip]
+other = "提示"
+
+[ghAlertimportant]
+other = "重要"
+
+[ghAlertwarning]
+other = "警告"
+
+[ghAlertcaution]
+other = "注意"
 ```
 
 ### 3.5 创建初始内容
@@ -355,21 +408,30 @@ git submodule update --init --recursive
 
 ```
 Blog/
-├── archetypes/          # 文章模板
-├── assets/              # 资源文件（图标等）
-│   └── identity/
+├── archetypes/          # 文章模板（posts.md / default.md）
+├── assets/              # 资源文件（JS、SCSS、图标）
+│   ├── identity/        # 站点图标
+│   ├── js/              # 自定义脚本（搜索、灯箱、字体切换等）
+│   └── scss/            # 自定义样式（features.scss 等）
 ├── content/             # 文章内容
 │   ├── posts/
-│   └── about.md
+│   ├── about.md
+│   └── search.md
 ├── layouts/             # 自定义布局
-│   └── _partials/
-│       └── svg.html     # 自定义图标
+│   ├── _default/        # 默认模板（search.html、list.json.json）
+│   ├── _markup/         # 渲染钩子（GitHub Alert、外链）
+│   ├── _partials/       # 局部模板（header、footer、svg 等）
+│   └── _shortcodes/     # 短代码（iframe）
 ├── static/              # 静态资源（图片等）
 │   └── images/
 ├── themes/              # 主题（submodule）
 │   └── hermit-v2/
 ├── i18n/                # 国际化
 │   └── zh.toml
+├── usehelp/             # 使用说明文档
+│   ├── Post.md          # 写作指南
+│   ├── Deploy.md        # 部署指南
+│   └── History.md       # 功能变更记录
 ├── hugo.toml            # 主配置文件
 ├── .gitignore
 └── .gitmodules
