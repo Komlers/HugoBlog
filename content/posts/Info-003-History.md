@@ -109,7 +109,7 @@ tags:
 
 ## 七、GitHub Markdown Alerts
 
-原版只支持 `{{< admonition >}}` shortcode，本博客新增了对 GitHub 原生 alert 语法的支持：
+原版只支持 `admonition` shortcode，本博客新增了对 GitHub 原生 alert 语法的支持：
 
 - **`layouts/_markup/render-blockquote.html`**：blockquote 渲染钩子，将 `> [!NOTE]` 等语法转换为主题 admonition 样式
 - **`i18n/zh.toml`**：新增 alert 标题中文翻译
