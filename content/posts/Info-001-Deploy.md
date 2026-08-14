@@ -36,7 +36,6 @@ tags:
 | 主题        | Hermit-V2                             |
 | 部署平台      | Cloudflare Pages                      |
 | Hugo 版本   | **0.164.0 Extended**                  |
-|           |                                       |
 
 > **关键要求**：必须使用 Hugo **Extended** 版本（含 `+extended` 标记），否则无法编译 SCSS。
 

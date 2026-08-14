@@ -163,19 +163,10 @@ $$
 主题使用 `admonition` shortcode，支持以下类型：
 `note`、`info`、`tip`、`success`、`warning`、`failure`、`danger`、`bug`、`summary`
 
-````markdown
-{{< admonition type="note" title="备注" >}}
-笔记内容
-{{< /admonition >}}
+![Snipaste_2026-08-14_10-48-55.png](https://img.danevan.top/image/pic/Snipaste_2026-08-14_10-48-55.png)
 
-{{< admonition type="tip" title="提示" >}}
-技巧提示
-{{< /admonition >}}
-
-{{< admonition type="warning" title="警告" >}}
-警告信息
-{{< /admonition >}}
-````
+>[!NOTE]
+>由于Hugo策略，即使在代码块中的ShortCode也会被识别正常渲染，所以我就换截图了。
 
 `title` 可省略，省略时自动使用类型名。
 
@@ -183,7 +174,7 @@ $$
 
 主题原生支持 GitHub 风格的 alert 语法，可直接在正文中使用：
 
-````markdown
+```markdown
 > [!NOTE]
 > 有用的信息
 
@@ -198,7 +189,7 @@ $$
 
 > [!CAUTION]
 > 潜在风险
-````
+```
 
 支持类型：`NOTE`、`TIP`、`IMPORTANT`、`WARNING`、`CAUTION`，标题会自动翻译为中文（备注/提示/重要/警告/注意）。
 
@@ -206,22 +197,16 @@ $$
 
 使用 `iframe` shortcode 嵌入外部页面。通过 `type` 参数选择预设样式：
 
-| type | 适用场景 | 说明 |
-|------|---------|------|
-| `widget`（默认） | 通用小部件 | 高度由内容自适应，透明背景 |
-| `music` | 网易云音乐播放器 | 高度由内容自适应，透明背景、无边框 |
-| `video` | B站 / YouTube 视频 | 固定高度 450，黑色背景 |
+| type         | 适用场景            | 说明                |
+| ------------ | --------------- | ----------------- |
+| `widget`（默认） | 通用小部件           | 高度由内容自适应，透明背景     |
+| `music`      | 网易云音乐播放器        | 高度由内容自适应，透明背景、无边框 |
+| `video`      | B站 / YouTube 视频 | 固定高度 450，黑色背景     |
 
-````markdown
-<!-- 通用小部件（默认 widget，高度自适应） -->
-{{< iframe src="https://example.com" >}}
+![Snipaste_2026-08-14_10-48-44.png](https://img.danevan.top/image/pic/Snipaste_2026-08-14_10-48-44.png)
 
-<!-- 网易云音乐迷你播放器（type=music） -->
-{{< iframe type="music" src="https://music.163.com/outchain/player?type=2&id=347230&auto=1" >}}
-
-<!-- B站视频（type=video，固定 450 黑底） -->
-{{< iframe type="video" src="https://player.bilibili.com/player.html?isOutside=true&aid=...&bvid=...&cid=...&p=1" >}}
-````
+>[!NOTE]
+>由于Hugo策略，即使在代码块中的ShortCode也会被识别正常渲染，所以我就换截图了。
 
 可选参数：
 
@@ -279,7 +264,8 @@ hugo --minify
 ```markdown
 摘要内容...
 
-<!--more-->
+<! --more-->
+ (↑这里的空格要删掉，和HTML注释格式一样)
 
 正文其余部分...
 ```
