@@ -8,7 +8,7 @@ images:
 description: 根据我当前的个人博客搭建情况，实例在我这个部署的环境下，如何去写一篇新的文章，以及一些相关注意事项。
 author: Dan_Evan
 categories:
-  - 介绍和记录
+  - 博客文档
 tags:
   - Hugo
   - 文章

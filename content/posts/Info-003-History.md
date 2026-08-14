@@ -8,7 +8,7 @@ images:
 description: 根据我当前的个人博客搭建情况，展示出我的博客从刚开始部署的毛坯状态，到如今功能比较丰富的状态的一些优化和改动。
 author: Dan_Evan
 categories:
-  - 介绍和记录
+  - 博客文档
 tags:
   - Hugo
   - 优化

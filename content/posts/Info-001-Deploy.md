@@ -8,7 +8,7 @@ images:
 description: 根据我当前的个人博客搭建情况，讲述如何从零开始基于Hugo和Hermit-V2主题，以及我个人优化改动的地方，去搭建部署个人博客。
 author: Dan_Evan
 categories:
-  - 介绍和记录
+  - 博客文档
 tags:
   - Hugo
   - Hermit-V2
