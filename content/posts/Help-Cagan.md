@@ -116,7 +116,7 @@ GaGan JE服服规
 
 **用法**：`/prefix &xXXXX`
 
-**解读**：在本服务器内，可以使用颜色代码来自定义头衔颜色。不同的，需要使用 `&` 替代 ` §`，例如：`§b（浅蓝色）` 等同于 `&b（浅蓝色）`。具体可以参考下面的颜色表：
+**解读**：在本服务器内，可以使用颜色代码来自定义头衔颜色。不同的，需要使用 `&` 替代 ` §`，例如：`&b（浅蓝色）` 等同于 `§b（浅蓝色）`。具体可以参考下面的颜色表：
 
 ![MCCOLOR.jpg](https://img.danevan.top/image/pic/MCCOLOR.jpg)
 
@@ -130,12 +130,10 @@ GaGan JE服服规
 
 **用法**：
 
-```txt
-/sethome xxx          # 设置新的家，名为xxx
-/home xxx             # 传送到名为xxx的家
-/rmhome xxx           # 删除名为xxx的家
-/renamehome aaa bbb   # 将名为aaa的家重命名为bbb
-```
+- 设置新的家，名为xxx：`/sethome xxx`
+- 传送到名为xxx的家：`/home xxx`
+- 删除名为xxx的家：`/rmhome xxx` 或 `/delhome xxx`
+- 将名为aaa的家重命名为bbb：`/renamehome aaa bbb`
 
 在 `/sethome` 和 `/home` 的时候，如果不加名字，则默认**创建**或**传送**到名为 `home` 的家。
 
@@ -148,7 +146,7 @@ GaGan JE服服规
 - 传送到某人：`/tpa xxx` 或 `/tpask xxx`
 - 让某人传送到我这里：`/tpahere xxx`
 - 接受传送请求：`/tpaccept`
-- 拒绝传送请求：`/tpadeny`（暂时不可用，置之不理或打字给对方说一下即可）
+- 拒绝传送请求：`/tpdeny`（暂时不可用，置之不理或打字给对方说一下即可）
 
 一个请求的有效时间为**120秒**，超过这个时间请求会过期。
 
