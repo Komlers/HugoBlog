@@ -1,7 +1,7 @@
 ---
 title: 【文档】开始写一篇新的文章（撰写文章指南）
 date: 2026-08-14T10:05:00+08:00
-lastmod: 2026-08-14T10:05:00+08:00
+lastmod: 2026-08-16T11:00:00+08:00
 draft: false
 toc: true
 images:
@@ -90,7 +90,8 @@ tags:
 Hugo 的 Front Matter 支持非常丰富，常见的有：
 
 - **slug / url / aliases**: 自定义 URL、路径及旧链接重定向
-- **weight**: 排序权重，越小越靠前
+- **weight**: 排序权重，越小越靠前（如果没作用请使用pinned）
+- **pinned**: 是否置顶文章（true/false）
 - **summary**: 自定义摘要（不设置则 Hugo 自动截取）
 - **layout / type**: 自定义布局模板
 - **publishDate / expiryDate**: 发布时间与过期时间
