@@ -12,6 +12,10 @@ copyright = "Dan_Evan"
 pygmentsCodefences = true
 pygmentsUseClasses = true
 
+[services]
+  [services.rss]
+    limit = 5
+
 [frontmatter]
   date = ["date", "publishDate", "lastmod"]
 
