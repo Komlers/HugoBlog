@@ -1,12 +1,12 @@
 ---
-title: Linux入门 - 第0章第1篇 - 选择一个合适的发行版
+title: Linux入门 - 第1章第1篇 - 选择一个合适的发行版
 date: 2026-09-25T18:00:00+08:00
-lastmod: 2026-09-25T18:00:00+08:00
+lastmod: 2026-10-04T22:20:00+08:00
 draft: false
 toc: true
 images:
 description: 在本章，我会介绍发行版御三家：Debian系、RedHat系、Arch系，以及其他小众发行版。作为本系列的开篇之作，选择一个自己喜欢的系统环境是一个必要前提，希望能帮助到读者挑选自己心仪的发行版。
-author: ""
+author: Dan_Evan
 categories:
   - Linux入门
 tags:
@@ -24,13 +24,16 @@ tags:
 
 所以作为一个初学者，你只需要知道：
 
-在广义上，Linux是包括内核以及所有的发行版，统筹概括为Linux操作系统。
-
-在狭义上，Linux就单指Linux内核。而像Debian、Ubuntu等等的发行版，其实都是使用Linux内核的，开箱可用的操作系统。
+- 在广义上，Linux是包括内核以及所有的发行版，统筹概括为Linux操作系统。
+- 在狭义上，Linux就单指Linux内核。而像Debian、Ubuntu等等的发行版，其实都是使用Linux内核的，开箱可用的操作系统。
 
 由于Linux内核的开源免费性，目前基于Linux内核的发行版，保守估计就有**上百个**。
 
-但其实这一大堆发行版，无外乎可以概括为四大类：**Debian系**、**RedHat系**、**Arch系**、**其他小众发行版**。而分组依据就是他们所使用的软件包管理器。例如Debian系发行版的软件包管理器都是 **APT** (`.deb`)，RedHat系的是 **RPM** (`.rpm`)，Arch系的是 **Pacman** (`.pkg.tar.zst`)：
+但其实这一大堆发行版，无外乎可以概括为四大类：**Debian系**、**RedHat系**、**Arch系**、**其他小众发行版**。而分组依据就是他们所使用的软件包管理器。例如：
+
+- Debian系：**APT** (`.deb`)
+- RedHat系：**RPM** (`.rpm`)
+- Arch系：**Pacman** (`.pkg.tar.zst`)：
 
 >[!NOTE] 关于Arch系的补充说明
 >Arch系的软件包管理器区分比较复杂，比如在正统 **Arch Linux** 上是 `pacman`，但衍生版例如 **CachyOS** 就是 `octopi` / `pamac`。
@@ -56,9 +59,17 @@ tags:
 Debian系是目前Linux发行版用户最多的一个家族，同时也是衍生版最多的家族。例如我们耳熟能详的 **Ubuntu**，就是基于Debian衍生而来的。
 
 >[!NOTE] Ubuntu的衍生版
->Ubuntu基于Debian，同时还有更多的发行版基于Ubuntu。比如Ubuntu的其他桌面环境变种：**Kubuntu** (KDE Plasma)、**Xubuntu** (XFCE)、**Lubuntu** (LXQT)、**Ubuntu MATE** (MATE)，等等等等。
+>Ubuntu基于Debian，同时还有更多的发行版基于Ubuntu。比如Ubuntu的其他桌面环境变种：
 >
->由于社区对Ubuntu的 `snap` 软件包及其管理器的排斥，所以剔除掉 `snap`，就诞生了Ubuntu又一个衍生版：**Linux Mint** (Cinnamon)
+>- **Kubuntu** (KDE Plasma)
+>- **Xubuntu** (XFCE)
+>- **Lubuntu** (LXQT)
+>- **Ubuntu MATE** (MATE)
+>- ……
+>
+>由于社区对Ubuntu的 `snap` 软件包及其管理器的排斥，所以剔除掉 `snap`，就诞生了Ubuntu又一个衍生版：
+>
+>- **Linux Mint** (Cinnamon)
 
 此外，像很多国产信创Linux系统也是基于Debian系开发的，例如：**Deepin**、**UOS** (Deepin下游) 等等。
 
@@ -97,7 +108,7 @@ RedHat系主要代表发行版就是 **RHEL** (Red Hat Enterprise Linux)，在�
 >[!NOTE] 关于Fedora
 >Fedora是一个由红帽公司赞助、由社区驱动的Linux发行版项目，其特点就是**新**，可以让用户及时用上新软件、新内核等，同时也很适合搞开发。
 >
->有趣的是，Linux内核之父 **Linus** 曾表示自己在Fedora上进行内核开发。原因可能有：Fedora上的软件包版本都非常新，而又不像一些滚动更新发行版那样容易出问题，很适合开发新内核和测试兼容性。
+>有趣的是，Linux内核之父 **Linus  Torvalds** 曾表示自己在Fedora上进行内核开发。原因可能有：Fedora上的软件包版本都非常新，而又不像一些滚动更新发行版那样容易出问题，很适合开发新内核和测试兼容性。
 
 另外还有一个独立发展的RedHat系发行版：**openSUSE**，也被称为“大蜥蜴”。openSUSE也使用了RPM软件包管理器，同时它也服务于服务器领域。
 
@@ -110,7 +121,7 @@ RedHat系主要代表发行版就是 **RHEL** (Red Hat Enterprise Linux)，在�
 
 | 发行版         | 上游     | 推荐度  | 原因                       |
 | ----------- | ------ | ---- | ------------------------ |
-| Fedora      | ——     | 8/10 | 新，非常新，但也很稳定，非常适合开发       |
+| Fedora      | ——     | 8/10 | 新，非常新，也很稳定，非常适合搞开发       |
 | CentOS      | Fedora | 6/10 | 现在的Stream没有以前稳定了，且换为滚动更新 |
 | RHEL        | CentOS | 7/10 | 稳，非常稳，但是需要付费，不如免费平替      |
 | Rocky Linux | RHEL   | 9/10 | 现在的RHEL克隆版本，相当于老CentOS平替 |
@@ -161,5 +172,12 @@ Gentoo绝对是Linux发行版中的一个异类，它的软件包管理器完全
 ## 结语
 
 总的来说，对于新手的话，我建议还是先去使用Debian系发行版来接触一下Linux；后续可以尝试一下RedHat系的Fedora以及Rocky Linux等，学习一下关于服务器运维方面的东西；后续可以研究一下Arch系，深入研究一下Linux；最后再去碰一下小众发行版。小众发行版碰或不碰，其实也无可厚非了。
+
+推荐学习顺序：
+
+1. **Ubuntu** / **Linux Mint**
+2. **Fedora** / **Rocky Linux**
+3. **CachyOS** / **Arch Linux**
+4. **Gentoo** / **NixOS**
 
 其实换发行版不是目的，你用过的发行版越多，投入的时间成本也就越多。我认为重点应该放在选择一个最适合自己的Linux发行版，能让自己专心投入于日常使用和工作中才是目的。
